@@ -12,16 +12,16 @@ Feature: US1001 Kullanici istediği ürün için arama yapabilmeli
     Given kullanici Testotomasyon sayfasina gider
     And phone icin arama yapar
     Then aradigi urunun bulundugunu test eder
-    And sayfayi Kapatir
+    And sayfayi kapatir
 
   Scenario:TC02 kullanici dress için arama yapabilmeli
     Given kullanici Testotomasyon sayfasina gider
     And dress icin arama yapar
     Then aradigi urunun bulundugunu test eder
-    And sayfayi Kapatir
+    And sayfayi kapatir
 
   Scenario:TC03 kullanici java için sonuc bulmamali
     Given kullanici Testotomasyon sayfasina gider
     And java icin arama yapar
     Then aradigi urunun bulunmadigini test eder
-    And sayfayi Kapatir
+    And sayfayi kapatir
