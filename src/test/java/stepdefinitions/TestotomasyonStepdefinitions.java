@@ -15,7 +15,6 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class TestotomasyonStepdefinitions {
