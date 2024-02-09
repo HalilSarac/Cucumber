@@ -7,11 +7,12 @@ import utilities.Driver;
 
 public class SauceDemoPage {
 
-    public SauceDemoPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+   public SauceDemoPage(){
+       PageFactory.initElements(Driver.getDriver(),this);
     }
+
     @FindBy(id = "user-name")
-    public WebElement userNameKutusu;
+    public WebElement usernameKutusu;
 
     @FindBy(id = "password")
     public WebElement passwordKutusu;

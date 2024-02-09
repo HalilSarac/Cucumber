@@ -11,7 +11,7 @@ public class SauceDemoStepdefinitions {
 
     @Then("saucedemo username kutusuna {string} yazar")
     public void saucedemo_username_kutusuna_yazar(String verilenUsername) {
-        sauceDemoPage.userNameKutusu.sendKeys(verilenUsername);
+        sauceDemoPage.usernameKutusu.sendKeys(verilenUsername);
     }
     @Then("saucedemo password kutusuna {string} yazar")
     public void saucedemo_password_kutusuna_yazar(String verilenPassword) {
@@ -36,7 +36,9 @@ public class SauceDemoStepdefinitions {
     }
     @Then("sectigi urunun basarili olarak sepete eklendigini test eder")
     public void sectigi_urunun_basarili_olarak_sepete_eklendigini_test_eder() {
+
         String sepettekiUrunIsmi = sauceDemoPage.sepettekiUrunIsimElementi.getText();
+
         Assert.assertEquals(ilkUrunIsmi,sepettekiUrunIsmi);
     }
 }

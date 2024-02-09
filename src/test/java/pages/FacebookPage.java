@@ -23,12 +23,15 @@ public class FacebookPage {
     @FindBy(xpath = "//button[@name='login']")
     public WebElement loginButonu;
 
-    @FindBy(xpath = "//*[text()='Hesabını bul ve giriş yap.']")
+    @FindBy(xpath = "//*[text()='Find your account and log in.']")
     public WebElement girisYapilamadiYaziElementi;
 
     @FindBy(xpath = "//*[@*='_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy']")
-    public WebElement yeniHesapOlustur;
+    public WebElement createNewAccountButonu;
 
     @FindBy(xpath = "//*[@*='websubmit']")
     public WebElement kayitOlButonu;
+
+
+
 }

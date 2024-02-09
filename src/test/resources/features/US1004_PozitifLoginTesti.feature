@@ -1,10 +1,11 @@
-Feature: US1004 kullanci geçerli bilgilerle sisteme giriş yapabilmeli
+Feature: US1004 Kullanici gecerli bilgilerle sisteme giris yapabilmeli
 
-  Scenario: TC10 geçerli username ve password ile sisteme giriş yapılabilmeli
+  @smoke @resim
+  Scenario: TC10 gecerli username ve password ile sisteme giris yapilabilmeli
 
     Given kullanici "toUrl" anasayfaya gider
     Then account butonuna basar
-    And email olarak "toGecersizEmail" girer
+    And email olarak "toGecerliEmail" girer
     And password olarak "toGecerliPassword" girer
     Then signIn butonuna basar
     And basarili giris yapilabildigini test eder

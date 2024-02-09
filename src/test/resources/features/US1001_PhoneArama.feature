@@ -1,26 +1,25 @@
 
 
 
-Feature: US1001 Kullanici istediği ürün için arama yapabilmeli
-  #Feature user story ile aynı seviyede kullanılır
-  #birden fazla test case içerebilir
-  #TestNG'ye göre düşünürsek Feature class, Scenario ise test method'una karşı gelir
+Feature: US1001 Kullanici istedigi urun icin arama yapabilmeli
+  #Feature user story ile ayni seviyede kullanilir
+  #birden fazla test case icerebilir
+  # TestNG'ye gore dusunursek Feature class, Scenario ise test method'una karsi gelir
 
-  Scenario:TC01 kullanici phone için arama yapabilmeli
-    #Test case ile aynı seviyede kullanılır
-
+  Scenario:TC01 kullanici phone icin arama yapabilmeli
+    # Test case ile ayni seviyede kullanilir
     Given kullanici Testotomasyon sayfasina gider
     And phone icin arama yapar
     Then aradigi urunun bulundugunu test eder
     And sayfayi kapatir
 
-  Scenario:TC02 kullanici dress için arama yapabilmeli
+  Scenario: TC02 kullanici dress icin arama yapabilmeli
     Given kullanici Testotomasyon sayfasina gider
     And dress icin arama yapar
     Then aradigi urunun bulundugunu test eder
     And sayfayi kapatir
 
-  Scenario:TC03 kullanici java için sonuc bulmamali
+  Scenario: TC03 kullanici java icin sonuc bulamamali
     Given kullanici Testotomasyon sayfasina gider
     And java icin arama yapar
     Then aradigi urunun bulunmadigini test eder

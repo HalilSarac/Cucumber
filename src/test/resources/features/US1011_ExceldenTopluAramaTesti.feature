@@ -1,5 +1,5 @@
 
-  Feature: US1011 kullanici excel olarak verilen listedeki urunleri aratir
+  Feature: US1012 kullanici excel olarak verilen listedeki urunleri aratir
 
     Scenario Outline: TC19 excelden sececegimiz satirdaki urunlerin min urun sayisi test edilir
 
@@ -11,10 +11,11 @@
       And sayfayi kapatir
 
       Examples:
-        |istenenSatir|
-        |2           |
-        |4           |
-        |5           |
-        |8           |
-        |9           |
-        |10          |
+      |istenenSatir|
+      |2           |
+      |3           |
+      |4           |
+      |5           |
+      |8           |
+      |9           |
+      |10          |

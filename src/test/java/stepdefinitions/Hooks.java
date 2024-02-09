@@ -5,7 +5,10 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
+
+
 public class Hooks {
+
     /*
         Cucumber'da @Before ve @After notasyonlarini kullanmak cok verimli degildir
         Cunku hangi stepdefinitions class'in altina koyarsak koyalim
@@ -22,7 +25,9 @@ public class Hooks {
         rahat bulunabilmesi ve yonetilebilmesi icin
         Hooks class'ina konulmasi genel kabul gormustur
 
+
      */
+
     @After
     public void tearDown(Scenario scenario){
         final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
@@ -31,4 +36,6 @@ public class Hooks {
         }
         Driver.quitDriver();
     }
+
+
 }

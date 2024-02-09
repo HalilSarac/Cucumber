@@ -1,5 +1,5 @@
 
-  Feature: US1010 kullanici verilen yanıs bilgilerle giris yapamaz
+  Feature: US1010 kullanici verilen yanlis bilgilerle giris yapamaz
 
     Scenario Outline: TC18 yanlis bilgilerle giris yapilamadigini test eder
 
@@ -13,10 +13,10 @@
       Then sayfayi kapatir
 
       Examples:
-      |siradakiEmail     |siradakiPassword|
-      | banu@gmail.com   |  898989        |
-      | sedat@yahoo.com  |  989887        |
-      | orkong@tmail.com |  122334        |
-      | fatih@hotmail.com|  454545        |
-      | arzu@senmail.com |  676767        |
-      |mehmet@mynet.com  |  878987        |
+      |siradakiEmail    |siradakiPassword|
+      |banu@gmail.com   |  898989        |
+      |sedat@yahoo.com  |  989887        |
+      |orkong@tmail.com |  122334        |
+      |fatih@hotmail.com|  454545        |
+      |arzu@senmail.com |  676767        |
+      |mehmet@mynet.com |  878987        |

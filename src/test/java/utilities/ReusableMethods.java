@@ -18,7 +18,7 @@ import java.util.Set;
 
 public class ReusableMethods {
 
-    public static void waitFor(int saniye){
+    public static void bekle(int saniye){
 
         try {
             Thread.sleep(saniye*1000);
@@ -28,7 +28,7 @@ public class ReusableMethods {
 
     }
 
-    public static List<String> stringToList(List<WebElement> webElementList){
+    public static List<String> stringListeCevir(List<WebElement> webElementList){
 
         List<String> stringList = new ArrayList<>();
 
@@ -41,7 +41,7 @@ public class ReusableMethods {
         return stringList;
     }
 
-    public static void titleIleWindowChange(String hedefTitle, WebDriver driver){
+    public static void titleIleWindowDegistir(String hedefTitle, WebDriver driver){
 
         Set<String> whdSeti = driver.getWindowHandles();
 

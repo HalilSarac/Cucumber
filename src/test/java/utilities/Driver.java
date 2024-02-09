@@ -16,12 +16,12 @@ public class Driver {
      */
 
     private Driver(){
-        // başka class'larin driver class'ından obje oluşturmasını engellemek için
-        // Singleton pattern kullanılmıştır
-        // singleton pattern class'dan obje oluşturulmasını enbellemek için
-        // constructor'i görünür yapıp, erişimini private yapmaya dayanir
-
+        // baska class'larin Driver class'indan obje olusturmasini engellemek icin
+        // Singleton pattern kullanilmistir
+        // Singleton pattern class'dan obje olusturulmasini engellemek icin
+        // constructor'i gorunur yapip, erisimini private yapmaya dayanir
     }
+
     public static WebDriver driver;
 
     public static WebDriver getDriver(){
@@ -39,15 +39,19 @@ public class Driver {
 
 
         if (driver == null){
+
             switch (browserTercihi){
+
                 case "firefox" :
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     break;
+
                 case "edge" :
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
+
                 case "safari" :
                     WebDriverManager.safaridriver().setup();
                     driver = new SafariDriver();
@@ -56,6 +60,7 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
             }
+
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }

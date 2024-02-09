@@ -24,4 +24,6 @@ public class ToAddRemovePage {
 
     @FindBy(xpath = "//*[@*='product-box mb-2 pb-1']")
     public List<WebElement> bulunanUrunElementleriList;
+
+
 }

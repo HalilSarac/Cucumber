@@ -24,7 +24,7 @@ public class EditorStepdefinitions {
         Actions actions = new Actions(Driver.getDriver());
         Faker faker = new Faker();
         firstname = faker.name().firstName();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.bekle(1);
         actions.sendKeys(firstname)
                 .sendKeys(Keys.TAB)
                 .sendKeys(faker.name().lastName())
@@ -39,7 +39,7 @@ public class EditorStepdefinitions {
                 .sendKeys(Keys.TAB)
                 .sendKeys("40000")
                 .perform();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.bekle(1);
 
     }
     @Then("Create tusuna basar")
@@ -60,7 +60,7 @@ public class EditorStepdefinitions {
     public void ve_girer(String firstname, String lastname, String position, String office, String extension, String date, String salary) {
 
         Actions actions = new Actions(Driver.getDriver());
-        ReusableMethods.waitFor(1);
+        ReusableMethods.bekle(1);
         actions.sendKeys(firstname)
                 .sendKeys(Keys.TAB)
                 .sendKeys(lastname)
@@ -75,7 +75,7 @@ public class EditorStepdefinitions {
                 .sendKeys(Keys.TAB)
                 .sendKeys(salary)
                 .perform();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.bekle(1);
 
 
     }

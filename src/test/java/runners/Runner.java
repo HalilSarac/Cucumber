@@ -16,8 +16,9 @@ import org.junit.runner.RunWith;
         dryRun = false // true oldugunda sadece eksik adim var mi diye kontrol eder
 )
 public class Runner {
-    // Runner class'i boş bir class'dır
-    // ama kullandığı notasyonlar sayesinde
+    // Runner class'i bos bir class'dir
+    // ama kullandigi notasyonlar sayesinde
     // projenin build edilmesini ve
-    // istenen feature dosyalarinin toplu olarak çalıştırılmasını sağlar
+    // istenen feature dosyalarinin toplu olarak callistirilmasini saglar
+
 }

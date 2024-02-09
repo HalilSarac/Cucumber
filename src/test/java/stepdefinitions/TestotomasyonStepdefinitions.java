@@ -15,6 +15,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class TestotomasyonStepdefinitions {
@@ -28,16 +29,14 @@ public class TestotomasyonStepdefinitions {
     public void kullanici_testotomasyon_sayfasina_gider() {
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
     }
-
     @Given("phone icin arama yapar")
     public void phone_icin_arama_yapar() {
         testOtomasyonPage.aramaKutusu.sendKeys("phone" + Keys.ENTER);
     }
-
     @Then("aradigi urunun bulundugunu test eder")
     public void aradigi_urunun_bulundugunu_test_eder() {
 
-        Assert.assertTrue(testOtomasyonPage.bulunanUrunElementleriList.size() > 0);
+        Assert.assertTrue(testOtomasyonPage.bulunanUrunElementleriList.size()>0);
     }
 
     @And("sayfayi kapatir")
@@ -61,7 +60,7 @@ public class TestotomasyonStepdefinitions {
         String expectedSonucYazisi = ConfigReader.getProperty("toUrunBulunamadiYazisi");
         String actualSonucYazisi = testOtomasyonPage.bulunanUrunSayisiElementi.getText();
 
-        Assert.assertEquals(expectedSonucYazisi, actualSonucYazisi);
+        Assert.assertEquals(expectedSonucYazisi,actualSonucYazisi);
     }
 
     @And("{string} icin arama yapar")
@@ -74,7 +73,7 @@ public class TestotomasyonStepdefinitions {
     public void saniyeBekler(int beklenecekSure) {
 
         try {
-            Thread.sleep(beklenecekSure * 1000);
+            Thread.sleep(beklenecekSure*1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -84,27 +83,22 @@ public class TestotomasyonStepdefinitions {
     public void kullanici_anasayfaya_gider(String configdenIstenenUrl) {
         Driver.getDriver().get(ConfigReader.getProperty(configdenIstenenUrl));
     }
-
     @Then("account butonuna basar")
     public void account_butonuna_basar() {
         testOtomasyonPage.accountLinki.click();
     }
-
     @Then("email olarak {string} girer")
     public void email_olarak_girer(String configdenIstenenEmail) {
         testOtomasyonPage.emailKutusu.sendKeys(ConfigReader.getProperty(configdenIstenenEmail));
     }
-
     @Then("password olarak {string} girer")
     public void password_olarak_girer(String configdenIstenenPassword) {
         testOtomasyonPage.passwordKutusu.sendKeys(ConfigReader.getProperty(configdenIstenenPassword));
     }
-
     @Then("signIn butonuna basar")
     public void sign_in_butonuna_basar() {
         testOtomasyonPage.loginButonu.click();
     }
-
     @Then("basarili giris yapilabildigini test eder")
     public void basarili_giris_yapilabildigini_test_eder() {
         Assert.assertTrue(testOtomasyonPage.logoutButonu.isDisplayed());
@@ -129,14 +123,14 @@ public class TestotomasyonStepdefinitions {
     @Then("urun excelindeki {string} daki urunun min. miktarini ve urun ismini kaydeder")
     public void urunExcelindekiDakiUrununMinMiktariniVeUrunIsminiKaydeder(String istenenSatir) throws IOException {
 
-        String dosyaYolu ="src/test/resources/stok.xlsx";
+        String dosyaYolu = "src/test/resources/stok.xlsx";
         FileInputStream fileInputStream = new FileInputStream(dosyaYolu);
         Workbook workbook = WorkbookFactory.create(fileInputStream);
         Sheet sayfa2 = workbook.getSheet("Sayfa2");
 
 
-        satirdakiUrunIsmi = sayfa2.getRow(Integer.parseInt(istenenSatir) - 1).getCell(0).toString();
-        String satirdakiMinUrunSayisiStr = sayfa2.getRow(Integer.parseInt(istenenSatir) - 1).getCell(1).toString();
+        satirdakiUrunIsmi = sayfa2.getRow(Integer.parseInt(istenenSatir)-1).getCell(0).toString();
+        String satirdakiMinUrunSayisiStr = sayfa2.getRow(Integer.parseInt(istenenSatir)-1).getCell(1).toString();
 
         double satirdakiMinUrunSayisiDouble = Double.parseDouble(satirdakiMinUrunSayisiStr);
 
@@ -151,7 +145,7 @@ public class TestotomasyonStepdefinitions {
         String aramaSonucYazisi = testOtomasyonPage.bulunanUrunSayisiElementi.getText();
         // 10 products found
 
-        aramaSonucYazisi = aramaSonucYazisi.replaceAll("\\D", ""); // "10"
+        aramaSonucYazisi = aramaSonucYazisi.replaceAll("\\D",""); // "10"
         actualBulunanUrunSayisi = Integer.parseInt(aramaSonucYazisi);
     }
 
@@ -172,27 +166,25 @@ public class TestotomasyonStepdefinitions {
 
         // exceldeki son satir sayisini bulup
         int sonSatirIndex = sayfa2.getLastRowNum();
-
         // bir loop ile urunu aratip min sayida urun bulundugunu test et
+
         boolean stoktaOlmayanVarMi = false;
-        //bunu flag olarak kullanacağız eğer stok miktarını tutturamayan olursa bunu true yapalım
+        // bunu flag olarak kullanacagiz
+        // eger stok miktarini tutturamayan olursa bunu true yapalim
 
-        for (int i = 1; i <= sonSatirIndex ; i++) {
-
+        for (int i = 1; i <=sonSatirIndex ; i++) {
             // once i.index'deki urun ismini ve min urun sayisini excel'den okuyup kaydedelim
             String satirdakiUrunIsmi = sayfa2.getRow(i).getCell(0).toString();
             String satirdakiMinUrunMiktariStr = sayfa2.getRow(i).getCell(1).toString();
             double satirdakiMinUrunMiktariDbl = Double.parseDouble(satirdakiMinUrunMiktariStr);
             int satirdakiMinUrunSayisi = (int)satirdakiMinUrunMiktariDbl;
-
             // testotomasyon anasayfaya gidelim
             Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
-
             // kaydettigimiz urun icin arama yapalim
-            testOtomasyonPage.aramaKutusu.sendKeys(satirdakiUrunIsmi + Keys.ENTER);
 
+            testOtomasyonPage.aramaKutusu.sendKeys(satirdakiUrunIsmi + Keys.ENTER);
             // bulunan urun sayisini kaydedelim
-            ReusableMethods.waitFor(1);
+            ReusableMethods.bekle(1);
             String actualUrunSayisiStr = testOtomasyonPage.bulunanUrunSayisiElementi.getText();
             actualUrunSayisiStr = actualUrunSayisiStr.replaceAll("\\D","");
 
@@ -205,8 +197,8 @@ public class TestotomasyonStepdefinitions {
             } catch (AssertionError e) {
                 stoktaOlmayanVarMi = true;
                 System.out.println("aranan "+satirdakiUrunIsmi+" min stok sayisi : "
-                        + satirdakiMinUrunSayisi+ ", bulunan urun sayisi : " +
-                        actualUrunSayisi);
+                                  + satirdakiMinUrunSayisi+ ", bulunan urun sayisi : " +
+                                    actualUrunSayisi);
             }
 
         }
